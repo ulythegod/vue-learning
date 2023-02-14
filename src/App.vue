@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from "vue-router";
-import { reactive } from "vue";
+import { reactive, provide } from "vue";
 import HelloWorld from "./components/HelloWorld.vue";
 import IncrementButton from "./components/IncrementButton.vue";
 import ComputedProperty from "./components/ComputedProperty.vue";
@@ -9,6 +9,13 @@ import ListRendering from "./components/ListRendering.vue";
 import FormInputBindings from "./components/FormInputBindings.vue";
 import LifecycleHooks from "./components/LifecycleHooks.vue";
 import WatchersLearn from "./components/WatchersLearn.vue";
+import PropsLearning from "./components/PropsLearning.vue";
+import FancyList from "./components/FancyList.vue";
+import MouseTrackingExample from './components/MouseTrackingExample.vue';
+import AsyncStateExample from './components/AsyncStateExample.vue';
+import TransitionLearning from './components/TransitionLearning.vue';
+import TransitionGroupLearning from "./components/TransitionGroupLearning.vue";
+import TeleportLearning from "./components/TeleportLearning.vue";
 
 const state = reactive({
   msg: "You did it!!",
@@ -19,7 +26,7 @@ let A0 = 1;
 let A1 = 2;
 let A2 = A0 + A1;
 
-console.log("A2", A2);// 3
+console.log("A2", A2); // 3
 
 A0 = 2;
 console.log("A2", A2);
@@ -27,6 +34,14 @@ console.log("A2", A2);
 function showH1() {
   state.ok = !state.ok;
 }
+
+function callback(msg: string) {
+  alert(msg);
+}
+
+const url = "url";
+
+provide(/* injection key */ 'providerMessage', /* value */ 'Hello message from App Component!');
 </script>
 
 <template>
@@ -59,6 +74,23 @@ function showH1() {
   <FormInputBindings />
   <LifecycleHooks />
   <WatchersLearn />
+  <PropsLearning name="Selena Gomez" :age="29" @some-event.once="callback" class="propsLearningBlock">
+    click me!!!
+  </PropsLearning>
+  <PropsLearning name="Selena Gomez" :age="29" @some-event.once="callback" class="propsLearningBlock" />
+  <FancyList :api-url="url" :per-page="10">
+    <template #item="{ body, username, likes }">
+      <div class="item">
+        <p>{{ body }}</p>
+        <p class="meta">by {{ username }} | {{ likes }} likes</p>
+      </div>
+    </template>
+  </FancyList>
+  <MouseTrackingExample />
+  <AsyncStateExample />
+  <TransitionLearning />
+  <TransitionGroupLearning />
+  <TeleportLearning />
 </template>
 
 <style scoped>
@@ -104,6 +136,17 @@ nav a:first-of-type {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+}
+
+.propsLearningBlock {
+  background-color: blue;
+  border-radius: 4px;
+  color: aliceblue;
+}
+
+.meta {
+  font-size: 0.8em;
+  color: #e748da;
 }
 
 @media (min-width: 1024px) {

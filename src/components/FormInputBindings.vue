@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
+import CustomInput from './CustomInput.vue';
 
 const options = ref([
   { text: "One", value: "A" },
@@ -14,6 +15,7 @@ const checkedNamesForCats = ref([]);
 const picked = ref("");
 const selected = ref("");
 const selectedMultiply = ref([]);
+const customInputValue = ref("");
 </script>
 
 <template>
@@ -69,6 +71,8 @@ const selectedMultiply = ref([]);
         {{ option.text }}
       </option>
     </select>
+    <p>Custom input</p>
+    <CustomInput v-model.capitalize="customInputValue" />
   </div>
   <div class="result">
     <h1 :class="{ resultName: true }">Form result</h1>
@@ -79,6 +83,7 @@ const selectedMultiply = ref([]);
     <p class="resultItem">picked: {{ picked }}</p>
     <p class="resultItem">selected: {{ selected }}</p>
     <p class="resultItem">selectedMultiply: {{ selectedMultiply }}</p>
+    <p class="resultItem">custom input value: {{ customInputValue }}</p>
   </div>
 </template>
 
