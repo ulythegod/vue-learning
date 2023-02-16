@@ -1,3 +1,4 @@
 {
-    "endOfLine": "cr"
+    "endOfLine": "auto",
+    "useTabs": false
 }

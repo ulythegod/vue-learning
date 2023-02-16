@@ -16,6 +16,7 @@ import AsyncStateExample from './components/AsyncStateExample.vue';
 import TransitionLearning from './components/TransitionLearning.vue';
 import TransitionGroupLearning from "./components/TransitionGroupLearning.vue";
 import TeleportLearning from "./components/TeleportLearning.vue";
+import DivWithColors from "./components/DivWithColors.vue";
 
 const state = reactive({
   msg: "You did it!!",
@@ -91,6 +92,7 @@ provide(/* injection key */ 'providerMessage', /* value */ 'Hello message from A
   <TransitionLearning />
   <TransitionGroupLearning />
   <TeleportLearning />
+  <DivWithColors />
 </template>
 
 <style scoped>
