@@ -18,6 +18,7 @@ import TransitionGroupLearning from "./components/TransitionGroupLearning.vue";
 import TeleportLearning from "./components/TeleportLearning.vue";
 import DivWithColors from "./components/DivWithColors.vue";
 import ParentTest from "./components/PropDrilling/ParentTest.vue";
+import TemplateLanding from "./components/Templates/TemplateLanding.vue";
 
 const state = reactive({
   msg: "You did it!!",
@@ -95,6 +96,7 @@ provide(/* injection key */ 'providerMessage', /* value */ 'Hello message from A
   <TransitionGroupLearning />
   <TeleportLearning />
   <DivWithColors />
+  <TemplateLanding />
 </template>
 
 <style scoped>
