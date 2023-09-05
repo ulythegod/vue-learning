@@ -11,12 +11,13 @@ import LifecycleHooks from "./components/LifecycleHooks.vue";
 import WatchersLearn from "./components/WatchersLearn.vue";
 import PropsLearning from "./components/PropsLearning.vue";
 import FancyList from "./components/FancyList.vue";
-import MouseTrackingExample from './components/MouseTrackingExample.vue';
-import AsyncStateExample from './components/AsyncStateExample.vue';
-import TransitionLearning from './components/TransitionLearning.vue';
+import MouseTrackingExample from "./components/MouseTrackingExample.vue";
+import AsyncStateExample from "./components/AsyncStateExample.vue";
+import TransitionLearning from "./components/TransitionLearning.vue";
 import TransitionGroupLearning from "./components/TransitionGroupLearning.vue";
 import TeleportLearning from "./components/TeleportLearning.vue";
 import DivWithColors from "./components/DivWithColors.vue";
+import ParentTest from "./components/PropDrilling/ParentTest.vue";
 
 const state = reactive({
   msg: "You did it!!",
@@ -69,6 +70,7 @@ provide(/* injection key */ 'providerMessage', /* value */ 'Hello message from A
       </nav>
     </div>
   </header>
+  <ParentTest />
   <RouterView />
   <ListRendering />
   <ReactivityInDepth />
