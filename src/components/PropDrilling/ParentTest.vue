@@ -12,7 +12,8 @@ export default {
     ChildTest,
   },
   setup() {
-    provide("count", 0);
+    const smth = null;
+    provide("count", 152, "smth", smth);
   },
 };
 </script>
